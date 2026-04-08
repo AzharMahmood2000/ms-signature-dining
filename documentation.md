@@ -1,4 +1,3 @@
-# My Path to Ms Signature Dining: A Developer’s Journey
 
 Building this project was a huge learning curve for me. What started as a few simple pages for a restaurant quickly turned into a deep dive into creating a truly premium user experience. Here’s a bit of the “behind-the-scenes” of how I got everything to work.
 
