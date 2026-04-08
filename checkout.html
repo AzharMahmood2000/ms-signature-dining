@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - MS Signature Dining</title>
+    <link rel="stylesheet" href="Styles/checkout.css">
+    <!-- Using Inter/Montserrat font for a modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="checkout-container">
+
+        <!-- Left Section: Order Summary -->
+        <div class="summary-panel">
+            <h2>Order Summary</h2>
+
+            <div class="summary-item">
+                <div class="item-img">
+                    <img src="images/nasi.webp" alt="Nasigurang">
+                </div>
+                <div class="item-details">
+                    <h3 class="item-name">Nasigurang</h3>
+                    <div class="detail-row"><span>Size</span> <strong>Medium</strong></div>
+                    <div class="detail-row"><span>Quantity</span> <strong>03</strong></div>
+                    <div class="detail-row"><span>Price</span> <strong>Rs. 750</strong></div>
+                </div>
+            </div>
+
+            <div class="summary-item">
+                <div class="item-img">
+                    <img src="images/rice and curry.jpg" alt="Rice & Curry">
+                </div>
+                <div class="item-details">
+                    <h3 class="item-name">Rice & Curry</h3>
+                    <div class="detail-row"><span>Size</span> <strong>Large</strong></div>
+                    <div class="detail-row"><span>Quantity</span> <strong>01</strong></div>
+                    <div class="detail-row"><span>Price</span> <strong>Rs. 650</strong></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Section: Form -->
+        <div class="form-panel">
+            <div class="form-header">
+                <div class="back-btn">
+                    <img src="images/back arrow.png" alt="Back">
+                </div>
+                <nav class="form-tabs">
+                    <span class="active">Information</span>
+                    <span>Payments</span>
+                </nav>
+            </div>
+
+            <h1>Complete Your Order</h1>
+
+            <section class="form-section">
+                <h4>Personal Details</h4>
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label>First Name</label>
+                        <input type="text">
+                    </div>
+                    <div class="input-group">
+                        <label>First Name</label> <!-- As per image labels -->
+                        <input type="text">
+                    </div>
+                    <div class="input-group">
+                        <label>Phone Number</label>
+                        <input type="tel">
+                    </div>
+                    <div class="input-group">
+                        <label>Email</label>
+                        <input type="email">
+                    </div>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h4>Shipping Address</h4>
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label>Address Line 1</label>
+                        <input type="text">
+                    </div>
+                    <div class="input-group">
+                        <label>Street</label>
+                        <input type="text">
+                    </div>
+                    <div class="input-group">
+                        <label>Landmark</label>
+                        <input type="text">
+                    </div>
+                    <div class="input-group">
+                        <label>Building Name</label>
+                        <input type="text">
+                    </div>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h4>Payments</h4>
+                <div class="payment-selector">
+                    <label class="payment-option">
+                        <input type="radio" name="pay" checked>
+                        <div class="pay-card">
+                            <div class="pay-icon">💳</div>
+                            <span>Credit & Debit</span>
+                        </div>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="pay">
+                        <div class="pay-card">
+                            <div class="pay-icon">💵</div>
+                            <span>Cash on Delivery</span>
+                        </div>
+                    </label>
+                </div>
+            </section>
+
+            <div class="price-breakdown">
+                <div class="price-row"><span>Subtotal</span> <span>Rs 2900</span></div>
+                <div class="price-row"><span>Delivery fee</span> <span>Rs 150</span></div>
+                <div class="price-row"><span>Service fee</span> <span>Rs 200</span></div>
+                <hr>
+                <div class="price-row total"><span>Total</span> <span>Rs 3350</span></div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn btn-cancel">Cancel</button>
+                <button class="btn btn-confirm">Confirm Order</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script/checkout.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,161 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f3f4f6;
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+    min-height: 100vh;
+}
+
+.payment-wrapper {
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
+}
+
+/* Header & Tabs */
+.payment-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.back-button a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #000;
+    transition: background 0.3s ease;
+}
+
+.back-button img {
+    width: 20px;
+    height: auto;
+}
+
+.back-button a:hover {
+    background-color: #f0f0f0;
+}
+
+.tabs {
+    margin-left: 60px;
+}
+
+.tab-item {
+    margin-right: 30px;
+    color: #888;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.tab-item.active {
+    color: #000;
+    font-weight: 700;
+}
+
+.payment-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 60px 80px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+
+/* Page Title */
+.page-title {
+    text-align: left;
+    color: #1a1a1a;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+/* Form Styling */
+.payment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 22px;
+    margin-bottom: 12px;
+    font-weight: 400;
+}
+
+.form-group input {
+    height: 55px;
+    border: 1px solid #bcbcbc;
+    border-radius: 4px;
+    padding: 0 15px;
+    font-size: 18px;
+    outline: none;
+}
+
+.full-width {
+    width: 70%;
+    /* Adjusting based on visual width in image */
+}
+
+.short-width {
+    width: 120px;
+}
+
+/* Button Styling */
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    /* Aligns button to the right */
+    margin-top: 20px;
+}
+
+.btn-proceed {
+    background-color: #14d30c;
+    color: #000;
+    border: none;
+    padding: 18px 60px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(20, 211, 12, 0.2);
+}
+
+.btn-proceed:hover {
+    background-color: #11b80a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(20, 211, 12, 0.3);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .full-width {
+        width: 100%;
+    }
+
+    .payment-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .tabs {
+        margin-left: 0;
+    }
+
+    .button-container {
+        justify-content: center;
+    }
+}

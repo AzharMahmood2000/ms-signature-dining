@@ -1,0 +1,361 @@
+/* --- Base Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+.btn-reserve {
+    font-family: 'Playfair Display', serif;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.image-box img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+/* --- Hero Section --- */
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/2.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 5%;
+    position: relative;
+}
+
+.logo {
+    position: absolute;
+    left: 5%;
+}
+
+.logo img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 400;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #b32d2e;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: #b32d2e;
+}
+
+.hero-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 0 8%;
+}
+
+.hero-text .subtitle {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+}
+
+
+
+/* --- Content Layouts --- */
+.flex-row {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.flex-row-reverse {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 60px;
+}
+
+.image-box,
+.content-box {
+    flex: 1;
+}
+
+
+/* --- Typography & Specific Elements --- */
+.accent-red {
+    color: #b32d2e;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.chef-name {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.chef-title {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.chef-quote {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    padding: 0 40px;
+}
+
+.philosophy h4 {
+    margin-bottom: 10px;
+}
+
+/* --- Awards Section --- */
+.awards-section {
+    background-color: #fff;
+}
+
+.grid-awards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.award-card {
+    background-color: #fffaf7;
+    /* Off-white pinkish tint */
+    padding: 40px 20px;
+    border: 1px solid #eee;
+    text-align: center;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+}
+
+.award-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border-color: #b32d2e55;
+}
+
+.award-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.award-card h4 {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.years {
+    font-size: 0.8rem;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+/* --- CTA Section --- */
+.cta-section {
+    background-color: #1a0808;
+    color: #fff;
+    text-align: center;
+    padding: 60px 0;
+}
+
+.cta-section h2 {
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+.btn-reserve {
+    background-color: #b32d2e;
+    color: #fff;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.btn-reserve:hover {
+    background-color: #8e2324;
+}
+
+/* --- Footer --- */
+.main-footer {
+    background-color: #000;
+    color: #fff;
+    padding: 60px 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-col h3 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.social-icons .icon img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+.social-icons .icon img:hover {
+    transform: scale(1.15) translateY(-5px);
+}
+
+.footer-col p {
+    font-size: 0.85rem;
+    color: #bbb;
+}
+
+.subscribe-form {
+    display: flex;
+}
+
+.subscribe-form input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background-color: #e0e0e0;
+}
+
+.subscribe-form button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #c0c0c0;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+
+    .flex-row,
+    .flex-row-reverse,
+    .grid-awards,
+    .footer-grid,
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .grid-awards {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .nav-links {
+        display: none;
+        /* Usually implement a hamburger menu here */
+    }
+}

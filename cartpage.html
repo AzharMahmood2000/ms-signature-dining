@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ms Signature Dining - Cart</title>
+    <link rel="stylesheet" href="Styles/cartpage.css">
+</head>
+
+<body>
+
+    <!-- Blurred Background Image Container -->
+    <div class="bg-overlay"></div>
+
+    <header class="navbar">
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo">
+        </div>
+        <nav class="nav-links">
+            <a href="Home.html">Home</a>
+            <a href="cartpage.html" class="active">Cart</a>
+        </nav>
+        <div class="user-profile">
+            <a href="profile.html" class="user-icon"><img src="images/profile.png" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid #ffffff;"></a>
+        </div>
+    </header>
+
+    <main class="cart-container">
+
+        <!-- Left Side: Cart Items -->
+        <section class="cart-items-panel">
+            <div class="items-grid">
+
+                <!-- Item 1 -->
+                <div class="product-item">
+                    <div class="product-body">
+                        <div class="product-image">
+                            <img src="images/nasi.webp" alt="Nasigurang">
+                        </div>
+                        <div class="product-controls">
+                            <button class="ctrl-btn remove">✕</button>
+                            <span class="size-label">L</span>
+                            <div class="qty-stepper">
+                                <button class="plus">+</button>
+                                <span class="qty-val">01</span>
+                                <button class="minus">−</button>
+                            </div>
+                            <button class="ctrl-btn sync">🔄</button>
+                        </div>
+                    </div>
+                    <div class="product-footer">
+                        <span class="p-name">NASIGURANG</span>
+                        <span class="p-price">RS. 750</span>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="product-item">
+                    <div class="product-body">
+                        <div class="product-image">
+                            <img src="images/rice and curry.jpg" alt="Rice & Curry">
+                        </div>
+                        <div class="product-controls">
+                            <button class="ctrl-btn remove">✕</button>
+                            <span class="size-label">L</span>
+                            <div class="qty-stepper">
+                                <button class="plus">+</button>
+                                <span class="qty-val">01</span>
+                                <button class="minus">−</button>
+                            </div>
+                            <button class="ctrl-btn sync">🔄</button>
+                        </div>
+                    </div>
+                    <div class="product-footer">
+                        <span class="p-name">RICE & CURRY</span>
+                        <span class="p-price">RS. 650</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Order Summary -->
+        <section class="summary-panel">
+            <h3>ORDER SUMMARY</h3>
+            <div class="summary-details">
+                <div class="summary-row">
+                    <span>SUBTOTAL</span>
+                    <span class="val">RS.3900</span>
+                </div>
+                <div class="summary-row">
+                    <span>SHIPPING</span>
+                    <span class="val">RS.400</span>
+                </div>
+                <hr>
+                <div class="summary-row total">
+                    <span>TOTAL</span>
+                    <span class="val">RS.4300</span>
+                </div>
+            </div>
+            <button class="confirm-btn">CONFIRM</button>
+        </section>
+
+    </main>
+
+    <script src="script/cart.js"></script>
+</body>
+
+</html>

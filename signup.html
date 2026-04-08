@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create an Account - Signature Dining</title>
+    <link rel="stylesheet" href="Styles/signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="page-container">
+        <div class="image-side">
+            <img src="images/signup left.png" alt="signup left">
+        </div>
+
+        <div class="form-side">
+            <div class="form-wrapper">
+                <div class="logo-container">
+                    <img src="images/logo.png" alt="Signature Dining Logo" class="logo">
+                </div>
+
+                <h2>Create an Account</h2>
+
+                <form id="signupForm">
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label>First Name</label>
+                            <input type="text" id="firstName" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Last Name</label>
+                            <input type="text" id="lastName" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Phone Number</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Create Password</label>
+                            <input type="password" id="password" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Confirm Password</label>
+                            <input type="password" id="confirmPassword" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="signup-btn">Signup</button>
+                </form>
+
+                <div class="social-container">
+                    <button class="social-btn">
+                        <img src="images/Google.png" alt="Google" width="18">
+                        Signup with Google
+                    </button>
+                    <button class="social-btn">
+                        <img src="images/mdi_apple.png" alt="Google" width="18">
+                        Signup with Apple
+                    </button>
+                </div>
+
+                <p class="login-link">Already Have an Account? <a href="login.html">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script/signup.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,253 @@
+/* --- Base Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background-color: #bfe7ef;
+    /* Light blue background */
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Background image with blur effect */
+.bg-overlay {
+    position: fixed;
+    bottom: -10%;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background: url('https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&q=80&w=1200') no-repeat bottom center;
+    background-size: 80%;
+    filter: blur(15px);
+    z-index: -1;
+    opacity: 0.7;
+}
+
+/* --- Navigation --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    position: relative;
+}
+
+.logo img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    margin: 0 15px;
+    font-size: 0.9rem;
+    position: relative;
+    padding-bottom: 5px;
+    transition: color 0.3s;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.user-icon {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.user-icon img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.user-icon:hover img {
+    transform: scale(1.2) translateY(-2px);
+}
+
+/* --- Main Layout --- */
+.cart-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 40px 5%;
+}
+
+/* --- Panels (Cards) --- */
+.cart-items-panel,
+.summary-panel {
+    background-color: #fff4f4;
+    /* Off-white/pinkish tint */
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.cart-items-panel {
+    flex: 2;
+    max-width: 800px;
+}
+
+.summary-panel {
+    flex: 1;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* --- Cart Items Styling --- */
+.items-grid {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+}
+
+.product-item {
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+}
+
+.product-body {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.product-image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    background-color: white;
+    object-fit: cover;
+}
+
+/* Vertical Controls */
+.product-controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+.ctrl-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.qty-stepper {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #999;
+    background: white;
+}
+
+.qty-stepper button {
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.qty-stepper span {
+    padding: 5px 0;
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #999;
+    font-size: 0.7rem;
+    text-align: center;
+}
+
+.product-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+/* --- Summary Panel Styling --- */
+.summary-panel h3 {
+    margin-bottom: 40px;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.summary-row.total {
+    margin-top: 25px;
+    font-size: 1rem;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #555;
+    margin: 10px 0;
+}
+
+.confirm-btn {
+    margin-top: 30px;
+    background-color: #00c800;
+    /* Confirm Green */
+    color: black;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 80%;
+    transition: background 0.3s;
+}
+
+.confirm-btn:hover {
+    background-color: #00a000;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+    .cart-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .items-grid {
+        flex-direction: column;
+    }
+}
