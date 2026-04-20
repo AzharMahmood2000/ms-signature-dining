@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Ms Signature Dining</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <img src="../images/logo.png" alt="Ms Signature Dining" onerror="this.src='https://via.placeholder.com/50'">
+                    <span>Admin Panel</span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active" data-section="overview">
+                        <a href="#"><i class="fas fa-chart-pie"></i> Overview</a>
+                    </li>
+                    <li data-section="menu">
+                        <a href="#"><i class="fas fa-utensils"></i> Menu Items</a>
+                    </li>
+                    <li data-section="orders">
+                        <a href="#"><i class="fas fa-shopping-bag"></i> Orders</a>
+                    </li>
+                    <li data-section="customers">
+                        <a href="#"><i class="fas fa-users"></i> Customers</a>
+                    </li>
+                    <li data-section="settings">
+                        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="../Home.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Exit Admin</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search orders, customers...">
+                </div>
+                <div class="user-profile">
+                    <div class="notifications">
+                        <i class="far fa-bell"></i>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="admin-info">
+                        <p class="admin-name">Admin User</p>
+                        <p class="admin-role">Super Admin</p>
+                    </div>
+                    <div class="admin-avatar">
+                        <img src="https://ui-avatars.com/api/?name=Admin+User&background=0d0d0d&color=fff" alt="Avatar">
+                    </div>
+                </div>
+            </header>
+
+            <section id="overview" class="content-section active">
+                <div class="section-header">
+                    <h1>Dashboard Overview</h1>
+                    <div class="date-selector">
+                        <select>
+                            <option>Last 7 Days</option>
+                            <option>Last 30 Days</option>
+                            <option>This Year</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon income"><i class="fas fa-wallet"></i></div>
+                        <div class="stat-details">
+                            <h3>Total Revenue</h3>
+                            <p class="stat-value">$12,845.00</p>
+                            <span class="stat-trend positive"><i class="fas fa-arrow-up"></i> 12.5%</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon orders"><i class="fas fa-shopping-cart"></i></div>
+                        <div class="stat-details">
+                            <h3>New Orders</h3>
+                            <p class="stat-value">158</p>
+                            <span class="stat-trend positive"><i class="fas fa-arrow-up"></i> 8.2%</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon customers"><i class="fas fa-user-friends"></i></div>
+                        <div class="stat-details">
+                            <h3>Active Customers</h3>
+                            <p class="stat-value">1,204</p>
+                            <span class="stat-trend negative"><i class="fas fa-arrow-down"></i> 1.5%</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon rating"><i class="fas fa-star"></i></div>
+                        <div class="stat-details">
+                            <h3>Avg. Rating</h3>
+                            <p class="stat-value">4.8</p>
+                            <span class="stat-trend positive"><i class="fas fa-arrow-up"></i> 0.3</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="recent-orders glass-panel">
+                        <div class="panel-header">
+                            <h2>Recent Orders</h2>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Customer</th>
+                                        <th>Date</th>
+                                        <th>Price</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>#MD-8921</td>
+                                        <td>Alex Johnson</td>
+                                        <td>Oct 20, 2023</td>
+                                        <td>$45.50</td>
+                                        <td><span class="status-badge delivered">Delivered</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#MD-8922</td>
+                                        <td>Sarah Williams</td>
+                                        <td>Oct 20, 2023</td>
+                                        <td>$120.00</td>
+                                        <td><span class="status-badge processing">Processing</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#MD-8923</td>
+                                        <td>Michael Chen</td>
+                                        <td>Oct 19, 2023</td>
+                                        <td>$32.00</td>
+                                        <td><span class="status-badge pending">Pending</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#MD-8924</td>
+                                        <td>Emma Davis</td>
+                                        <td>Oct 19, 2023</td>
+                                        <td>$88.20</td>
+                                        <td><span class="status-badge cancelled">Cancelled</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="popular-items glass-panel">
+                        <div class="panel-header">
+                            <h2>Popular Dishes</h2>
+                        </div>
+                        <div class="item-list">
+                            <div class="popular-item">
+                                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=100&q=80" alt="Dish">
+                                <div class="item-info">
+                                    <h4>Signature Seafood Grill</h4>
+                                    <p>420 orders this month</p>
+                                </div>
+                                <div class="item-price">$28.00</div>
+                            </div>
+                            <div class="popular-item">
+                                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=100&q=80" alt="Dish">
+                                <div class="item-info">
+                                    <h4>Truffle Pasta Deluxe</h4>
+                                    <p>385 orders this month</p>
+                                </div>
+                                <div class="item-price">$24.50</div>
+                            </div>
+                            <div class="popular-item">
+                                <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=100&q=80" alt="Dish">
+                                <div class="item-info">
+                                    <h4>Molten Lava Cake</h4>
+                                    <p>312 orders this month</p>
+                                </div>
+                                <div class="item-price">$12.00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="menu" class="content-section">
+                <div class="section-header">
+                    <h1>Menu Management</h1>
+                    <button class="add-btn"><i class="fas fa-plus"></i> Add New Item</button>
+                </div>
+                <div class="menu-filters">
+                    <button class="filter-btn active">All</button>
+                    <button class="filter-btn">Main Course</button>
+                    <button class="filter-btn">Desserts</button>
+                    <button class="filter-btn">Beverages</button>
+                </div>
+                <!-- Menu management content would go here -->
+                <div class="glass-panel">
+                    <p style="text-align: center; padding: 40px; color: #888;">Menu management interface under construction...</p>
+                </div>
+            </section>
+
+            <!-- Other sections would follow similar structure -->
+        </main>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
