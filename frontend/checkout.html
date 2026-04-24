@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - MS Signature Dining</title>
+    <link rel="stylesheet" href="Styles/checkout.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="checkout-container">
+
+        <!-- Left Section: Order Summary — populated by checkout.js -->
+        <div class="summary-panel">
+            <h2>Order Summary</h2>
+            <p style="color:#aaa;padding:16px 0;font-size:14px;">Loading your order...</p>
+        </div>
+
+        <!-- Right Section: Form -->
+        <div class="form-panel">
+            <div class="form-header">
+                <div class="back-btn">
+                    <img src="images/back arrow.png" alt="Back">
+                </div>
+                <nav class="form-tabs">
+                    <span class="active">Information</span>
+                    <span id="paymentTab" style="display: none;">Payments</span>
+                </nav>
+            </div>
+
+            <h1>Complete Your Order</h1>
+
+            <section class="form-section info-section">
+                <h4>Personal Details</h4>
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label>First Name</label>
+                        <input type="text" id="firstName" placeholder="John" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Last Name</label>
+                        <input type="text" id="lastName" placeholder="Perera" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Phone Number</label>
+                        <input type="tel" id="phoneNumber" placeholder="07X-XXXXXXX" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Email</label>
+                        <input type="email" id="emailCheckout" placeholder="you@email.com" required>
+                    </div>
+                </div>
+            </section>
+
+            <section class="form-section info-section">
+                <h4>Shipping Address</h4>
+                <div class="input-grid">
+                    <div class="input-group">
+                        <label>Address Line 1</label>
+                        <input type="text" id="address1" placeholder="No. 12, Main Street" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Street / Area</label>
+                        <input type="text" id="street" placeholder="Colombo 03" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Landmark (optional)</label>
+                        <input type="text" id="landmark" placeholder="Near the park">
+                    </div>
+                    <div class="input-group">
+                        <label>Building Name (optional)</label>
+                        <input type="text" id="buildingName" placeholder="Sunrise Tower">
+                    </div>
+                </div>
+            </section>
+
+            <section class="form-section" id="paymentSection" style="display: none;">
+                <h4>Payments</h4>
+                <div class="payment-selector">
+                    <label class="payment-option">
+                        <input type="radio" name="pay" checked>
+                        <div class="pay-card">
+                            <div class="pay-icon">💳</div>
+                            <span>Credit &amp; Debit</span>
+                        </div>
+                    </label>
+                    <label class="payment-option">
+                        <input type="radio" name="pay">
+                        <div class="pay-card">
+                            <div class="pay-icon">💵</div>
+                            <span>Cash on Delivery</span>
+                        </div>
+                    </label>
+                </div>
+            </section>
+
+            <div class="action-buttons">
+                <button class="btn btn-cancel">Cancel</button>
+                <button class="btn btn-confirm">Confirm Order</button>
+            </div>
+        </div></div>
+    </div>
+
+    <script src="script/checkout.js"></script>
+</body>
+
+</html>

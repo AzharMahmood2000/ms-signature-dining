@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Seasonal Menu - Ms Signature Dining</title>
+    <link rel="stylesheet" href="Styles/menu.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="reservation.html">Book a Table</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="menu.html" class="active">Menu</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions" style="display: flex; gap: 20px; align-items: center; margin-left: auto;">
+            <a href="profile.html" class="icon"><img src="images/profile.png" alt="Profile" style="width: 40px; height: 40px; border-radius: 50%; border: 2px solid #ffffff; cursor: pointer;"></a>
+            <a href="cartpage.html" class="icon"><img src="images/Vector (1).png" alt="Cart" style="width: 30px; height: 30px; cursor: pointer; filter: brightness(0) invert(1);"></a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 class="seasonal-title">OUR SEASONAL MENU</h1>
+        <div class="hero-image-container">
+            <img src="images/1.jpg" alt="Fried Chicken Menu">
+        </div>
+    </section>
+
+    <!-- Filter & Search Section -->
+    <section class="filter-bar container">
+        <nav class="category-nav">
+            <a href="#" class="cat-link active" data-filter="all">All</a>
+            <a href="#" class="cat-link" data-filter="main course">Main Course</a>
+            <a href="#" class="cat-link" data-filter="breakfast items">Breakfast Items</a>
+            <a href="#" class="cat-link" data-filter="side dishes">Side Dishes</a>
+            <a href="#" class="cat-link" data-filter="desserts & sweets">Desserts & Sweets</a>
+            <a href="#" class="cat-link" data-filter="beverages">Beverages</a>
+        </nav>
+        <div class="search-box">
+            <label>What you want to eat?</label>
+            <div class="search-input">
+                <input type="text" id="itemSearch" placeholder="Filter items...">
+                <span class="search-icon">🔍</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Grid Section -->
+    <main class="menu-grid container" id="menuGrid">
+
+        <!-- Dish 1 -->
+        <div class="menu-card" data-category="main course">
+            <div class="card-img">
+                <span class="heart-icon">♡</span>
+                <img src="images/pepper chicken_resized.jpg" alt="Pepper Chicken">
+            </div>
+            <div class="card-info">
+                <span class="dish-name">Pepper Chicken</span>
+                <span class="dish-price">Rs. 200</span>
+            </div>
+            <button class="order-btn">Order Now</button>
+        </div>
+
+        <!-- Dish 2 -->
+        <div class="menu-card" data-category="main course">
+            <div class="card-img">
+                <span class="heart-icon">♡</span>
+                <img src="images/sea food banana_resized.webp" alt="Sea Food">
+            </div>
+            <div class="card-info">
+                <span class="dish-name">Sea Food</span>
+                <span class="dish-price">Rs. 250</span>
+            </div>
+            <button class="order-btn">Order Now</button>
+        </div>
+
+        <!-- Dish 3 -->
+        <div class="menu-card" data-category="main course">
+            <div class="card-img">
+                <span class="heart-icon">♡</span>
+                <img src="images/chicken with mushroom_resized.jpg" alt="Chicken with Mushroom">
+            </div>
+            <div class="card-info">
+                <span class="dish-name">Chicken with Mushroom</span>
+                <span class="dish-price">Rs. 180</span>
+            </div>
+            <button class="order-btn">Order Now</button>
+        </div>
+
+        <!-- Dish 4 -->
+        <div class="menu-card" data-category="side dishes">
+            <div class="card-img">
+                <span class="heart-icon">♡</span>
+                <img src="images/hot butter mushroom.png" alt="Hot Butter Mushroom">
+            </div>
+            <div class="card-info">
+                <span class="dish-name">Hot Butter Mushroom</span>
+                <span class="dish-price">Rs. 300</span>
+            </div>
+            <button class="order-btn">Order Now</button>
+        </div>
+
+        <!-- Dish 5 -->
+        <div class="menu-card" data-category="main course">
+            <div class="card-img"><span class="heart-icon">♡</span><img src="images/rice and curry 1.jpg" alt="Dish">
+            </div>
+            <div class="card-info"><span class="dish-name">Rice & Curry</span><span class="dish-price">Rs. 220</span>
+            </div>
+            <button class="order-btn">Order Now</button>
+        </div>
+
+        <!-- Dish 6 -->
+        <div class="menu-card" data-category="main course">
+            <div class="card-img"><span class="heart-icon">♡</span><img src="images/rice and curry 2.webp" alt="Dish">
+            </div>
+            <div class="card-info"><span class="dish-name">Nasi & Carry</span><span class="dish-price">Rs. 150</span>
+            </div>
+            <button class="order-btn">Order Now</button>
+        </div>
+
+        <!-- Dish 7 -->
+        <div class="menu-card" data-category="side dishes">
+            <div class="card-img"><span class="heart-icon">♡</span><img src="images/rice and curry 3.webp" alt="Dish">
+            </div>
+            <div class="card-info"><span class="dish-name">Polos</span><span class="dish-price">Rs. 150</span></div>
+            <button class="order-btn">Order Now</button>
+        </div>
+
+        <!-- Dish 8 -->
+        <div class="menu-card" data-category="breakfast items">
+            <div class="card-img"><span class="heart-icon">♡</span><img src="images/shaved radish side dish 2.webp"
+                    alt="Dish"></div>
+            <div class="card-info"><span class="dish-name">Noodles</span><span class="dish-price">Rs. 150</span></div>
+            <button class="order-btn">Order Now</button>
+        </div>
+
+        <!-- Dish 9 -->
+        <div class="menu-card" data-category="beverages">
+            <div class="card-img"><span class="heart-icon">♡</span><img src="images/cocoa.jpg" alt="Dish"></div>
+            <div class="card-info"><span class="dish-name">Cocoa</span><span class="dish-price">Rs. 150</span></div>
+            <button class="order-btn">Order Now</button>
+        </div>
+
+        <!-- Dish 10 -->
+        <div class="menu-card" data-category="side dishes">
+            <div class="card-img"><span class="heart-icon">♡</span><img src="images/baby poteto.jpg" alt="Dish"></div>
+            <div class="card-info"><span class="dish-name">Baby Poteto</span><span class="dish-price">Rs. 150</span>
+            </div>
+            <button class="order-btn">Order Now</button>
+        </div>
+
+        <!-- Dish 11 -->
+        <div class="menu-card" data-category="side dishes">
+            <div class="card-img"><span class="heart-icon">♡</span><img src="images/shaved radish side dish 2.webp"
+                    alt="Dish">
+            </div>
+            <div class="card-info"><span class="dish-name">Onion Side Dish</span><span class="dish-price">Rs. 150</span>
+            </div>
+            <button class="order-btn">Order Now</button>
+        </div>
+
+        <!-- Dish 12 -->
+        <div class="menu-card" data-category="main course">
+            <div class="card-img"><span class="heart-icon">♡</span><img src="images/nasi.webp" alt="Dish"></div>
+            <div class="card-info"><span class="dish-name">Nasigurang</span><span class="dish-price">Rs. 150</span>
+            </div>
+            <button class="order-btn">Order Now</button>
+        </div>
+
+        <!-- Dish 13 -->
+        <div class="menu-card" data-category="desserts & sweets">
+            <div class="card-img"><span class="heart-icon">♡</span><img src="images/coconut balls.webp" alt="Dish">
+            </div>
+            <div class="card-info"><span class="dish-name">Coconut Balls</span><span class="dish-price">Rs. 150</span>
+            </div>
+            <button class="order-btn">Order Now</button>
+        </div>
+
+        <!-- Dish 14 -->
+        <div class="menu-card" data-category="desserts & sweets">
+            <div class="card-img"><span class="heart-icon">♡</span><img src="images/poteto brownies.webp" alt="Dish">
+            </div>
+            <div class="card-info"><span class="dish-name">Poteto Brownies</span><span class="dish-price">Rs. 150</span>
+            </div>
+            <button class="order-btn">Order Now</button>
+        </div>
+
+        <!-- Dish 15 -->
+        <div class="menu-card" data-category="beverages">
+            <div class="card-img"><span class="heart-icon">♡</span><img src="images/juice.jpg" alt="Dish"></div>
+            <div class="card-info"><span class="dish-name">Fruit Juice</span><span class="dish-price">Rs. 150</span>
+            </div>
+            <button class="order-btn">Order Now</button>
+        </div>
+
+        <!-- Dish 16 -->
+        <div class="menu-card" data-category="beverages">
+            <div class="card-img"><span class="heart-icon">♡</span><img src="images/coffee.jpg" alt="Dish"></div>
+            <div class="card-info"><span class="dish-name">Coffee</span><span class="dish-price">Rs. 150</span></div>
+            <button class="order-btn">Order Now</button>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul class="quick-links">
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-col centered-text">
+                <h3>OPERATIONAL HOURS</h3>
+                <p>MON-FRI 10:00 AM - 12:00 PM</p>
+                <p>SAT - SUN 9:00 AM - MIDNIGHT</p>
+            </div>
+            <div class="footer-col subscription">
+                <h3>Subscribe to our email</h3>
+                <p>Enter your Email Address</p>
+                <form class="subscribe-form">
+                    <input type="email">
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom container">
+            <div class="social-wrapper">
+                <h4>SOCIAL MEDIA</h4>
+                <div class="icons">
+                    <img src="images/Instagram.png" alt="IG">
+                    <img src="images/Facebook logo.png" alt="FB">
+                    <img src="images/X.png" alt="X">
+                </div>
+            </div>
+            <p class="copyright">&copy; 2026 Ms signature dining all right reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script/menu.js"></script>
+</body>
+
+</html>

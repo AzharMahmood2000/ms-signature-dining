@@ -1,0 +1,33 @@
+{
+  "name": "ms-signature-dining-api",
+  "version": "2.0.0",
+  "description": "REST API for Ms Signature Dining - Node.js + SQLite backend",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"No tests configured\" && exit 0"
+  },
+  "keywords": [
+    "restaurant",
+    "api",
+    "nodejs",
+    "sqlite"
+  ],
+  "author": "Ms Signature Dining",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^2.2.2",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "sqlite3": "^6.0.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/supertest": "^7.2.0",
+    "jest": "^30.3.0",
+    "nodemon": "^3.1.14",
+    "supertest": "^7.2.2",
+    "ts-jest": "^29.4.9"
+  }
+}

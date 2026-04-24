@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserve a Table - Ms Signature Dining</title>
+    <link rel="stylesheet" href="Styles/reservation.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="images/logo.png" alt="Logo">
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <a href="profile.html"><img src="images/profile.png" alt="Profile"></a>
+            <a href="cartpage.html"><img src="images/Vector (1).png" alt="Cart" style="filter: brightness(0) invert(1);"></a>
+        </div>
+    </header>
+
+    <!-- Reservation Container -->
+    <main class="reservation-wrapper">
+        <div class="reservation-card">
+            
+            <div class="reservation-info">
+                <h2>Book a Table</h2>
+                <p>Experience an unforgettable dining journey at Ms Signature Dining. Reserve your spot today.</p>
+                
+                <div class="info-details">
+                    <div class="detail-item">
+                        <span class="icon">🕒</span>
+                        <div>
+                            <strong>Opening Hours</strong>
+                            <p>Mon-Fri: 10:00 AM - 11:00 PM</p>
+                            <p>Sat-Sun: 9:00 AM - Midnight</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <span class="icon">📍</span>
+                        <div>
+                            <strong>Location</strong>
+                            <p>No. 236, Main Street, Colombo 03</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <span class="icon">📞</span>
+                        <div>
+                            <strong>Contact</strong>
+                            <p>+94 11 234 5678</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reservation-form-container">
+                <h3>Reservation Details</h3>
+                <form id="reservationForm">
+                    <div class="form-grid">
+                        <div class="input-group">
+                            <label>Full Name</label>
+                            <input type="text" id="resName" placeholder="John Doe" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Email Address</label>
+                            <input type="email" id="resEmail" placeholder="john@example.com" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Phone Number</label>
+                            <input type="tel" id="resPhone" placeholder="07X-XXXXXXX" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Number of Guests</label>
+                            <input type="number" id="resGuests" min="1" max="20" placeholder="2" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Date</label>
+                            <input type="date" id="resDate" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Time</label>
+                            <input type="time" id="resTime" required>
+                        </div>
+                    </div>
+                    <div class="input-group full-width">
+                        <label>Special Requests (Optional)</label>
+                        <textarea id="resRequests" rows="3" placeholder="Anniversary, allergy info, window seat..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn" id="btnReserve">Confirm Reservation</button>
+                </form>
+
+                <div id="resSuccessMsg" class="success-message" style="display: none;">
+                    <h3>🎉 Reservation Request Sent!</h3>
+                    <p>Thank you for choosing Ms Signature Dining. We have received your request and will confirm your table shortly.</p>
+                    <button class="submit-btn" onclick="window.location.href='Home.html'" style="margin-top:20px;">Return to Home</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script/reservation.js"></script>
+</body>
+
+</html>

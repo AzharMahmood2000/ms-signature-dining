@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Ms Signature Dining</title>
+    <meta name="description" content="Admin dashboard for Ms Signature Dining restaurant management system.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="admin-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <img src="../images/logo.png" alt="Ms Signature Dining" onerror="this.src='https://ui-avatars.com/api/?name=MS&background=c9a84c&color=fff'">
+                    <span>Admin Panel</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active" data-section="overview">
+                        <a href="#"><i class="fas fa-chart-pie"></i> Overview</a>
+                    </li>
+                    <li data-section="menu">
+                        <a href="#"><i class="fas fa-utensils"></i> Menu Items</a>
+                    </li>
+                    <li data-section="orders">
+                        <a href="#"><i class="fas fa-shopping-bag"></i> Orders</a>
+                    </li>
+                    <li data-section="customers">
+                        <a href="#"><i class="fas fa-users"></i> Customers</a>
+                    </li>
+                    <li data-section="messages">
+                        <a href="#"><i class="fas fa-envelope"></i> Messages</a>
+                    </li>
+                    <li data-section="reservations">
+                        <a href="#"><i class="fas fa-calendar-check"></i> Reservations</a>
+                    </li>
+                    <li data-section="homepage">
+                        <a href="#"><i class="fas fa-home"></i> Homepage</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="#" class="logout-btn" id="adminLogout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search orders, customers, items...">
+                </div>
+                <div class="user-profile">
+                    <div class="notifications">
+                        <i class="far fa-bell"></i>
+                        <span class="badge" id="notif-badge">0</span>
+                    </div>
+                    <div class="admin-info">
+                        <p class="admin-name">Admin User</p>
+                        <p class="admin-role">Super Admin</p>
+                    </div>
+                    <div class="admin-avatar">
+                        <img src="https://ui-avatars.com/api/?name=Admin+User&background=0d0d0d&color=fff" alt="Avatar">
+                    </div>
+                </div>
+            </header>
+
+            <!-- =================== OVERVIEW SECTION =================== -->
+            <section id="overview" class="content-section active">
+                <div class="section-header">
+                    <h1>Dashboard Overview</h1>
+                    <div class="date-selector">
+                        <select id="dateRange">
+                            <option>Live Data</option>
+                            <option>Last 7 Days</option>
+                            <option>Last 30 Days</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon income"><i class="fas fa-wallet"></i></div>
+                        <div class="stat-details">
+                            <h3>Total Revenue</h3>
+                            <p class="stat-value" id="stat-revenue">Loading...</p>
+                            <span class="stat-trend positive"><i class="fas fa-arrow-up"></i> Live</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon orders"><i class="fas fa-shopping-cart"></i></div>
+                        <div class="stat-details">
+                            <h3>Total Orders</h3>
+                            <p class="stat-value" id="stat-orders">Loading...</p>
+                            <span class="stat-trend positive"><i class="fas fa-arrow-up"></i> <span id="stat-pending">0</span> pending</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon customers"><i class="fas fa-user-friends"></i></div>
+                        <div class="stat-details">
+                            <h3>Registered Users</h3>
+                            <p class="stat-value" id="stat-customers">Loading...</p>
+                            <span class="stat-trend positive"><i class="fas fa-arrow-up"></i> Live</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon rating"><i class="fas fa-star"></i></div>
+                        <div class="stat-details">
+                            <h3>Avg. Rating</h3>
+                            <p class="stat-value" id="stat-rating">Loading...</p>
+                            <span class="stat-trend positive"><i class="fas fa-arrow-up"></i> Live</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <!-- Recent Orders Table -->
+                    <div class="recent-orders glass-panel">
+                        <div class="panel-header">
+                            <h2>Recent Orders</h2>
+                            <a href="#" class="view-all" onclick="document.querySelector('[data-section=orders]').click(); return false;">View All</a>
+                        </div>
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Customer</th>
+                                        <th>Date</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="recentOrdersBody">
+                                    <tr><td colspan="5" style="text-align:center;color:#888;padding:20px;">Loading...</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Popular Items -->
+                    <div class="popular-items glass-panel">
+                        <div class="panel-header">
+                            <h2>Popular Dishes</h2>
+                        </div>
+                        <div class="item-list" id="popularItemsList">
+                            <p style="color:#888;text-align:center;padding:20px;">Loading...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =================== MENU SECTION =================== -->
+            <section id="menu" class="content-section">
+                <div class="section-header">
+                    <h1>Menu Management</h1>
+                    <button class="add-btn" onclick="document.getElementById('addItemModal').style.display='flex'">
+                        <i class="fas fa-plus"></i> Add New Item
+                    </button>
+                </div>
+
+                <div class="menu-filters">
+                    <button class="filter-btn active">All</button>
+                    <button class="filter-btn">Main Course</button>
+                    <button class="filter-btn">Desserts</button>
+                    <button class="filter-btn">Beverages</button>
+                    <button class="filter-btn">Side Dishes</button>
+                    <button class="filter-btn">Breakfast</button>
+                </div>
+
+                <div class="glass-panel">
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Image</th>
+                                    <th>Name</th>
+                                    <th>Category</th>
+                                    <th>Price</th>
+                                    <th>Rating</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="menuItemsBody">
+                                <tr><td colspan="7" style="text-align:center;color:#888;padding:20px;">Loading menu items...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =================== ORDERS SECTION =================== -->
+            <section id="orders" class="content-section">
+                <div class="section-header">
+                    <h1>All Orders</h1>
+                    <button class="add-btn" onclick="location.reload()" style="background:#2ecc71;">
+                        <i class="fas fa-sync"></i> Refresh
+                    </button>
+                </div>
+
+                <div class="glass-panel">
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Email</th>
+                                    <th>Date</th>
+                                    <th>Total</th>
+                                    <th>Status</th>
+                                    <th>Details</th>
+                                </tr>
+                            </thead>
+                            <tbody id="allOrdersBody">
+                                <tr><td colspan="7" style="text-align:center;color:#888;padding:20px;">Loading orders...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =================== CUSTOMERS SECTION =================== -->
+            <section id="customers" class="content-section">
+                <div class="section-header">
+                    <h1>Customer Management</h1>
+                </div>
+
+                <div class="glass-panel">
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Orders</th>
+                                    <th>Total Spent</th>
+                                </tr>
+                            </thead>
+                            <tbody id="customersBody">
+                                <tr><td colspan="6" style="text-align:center;color:#888;padding:20px;">Loading customers...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =================== MESSAGES SECTION =================== -->
+            <section id="messages" class="content-section">
+                <div class="section-header">
+                    <h1>Contact Messages</h1>
+                </div>
+
+                <div class="glass-panel">
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Subject</th>
+                                    <th>Date</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="messagesBody">
+                                <tr><td colspan="5" style="text-align:center;color:#888;padding:20px;">Loading messages...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =================== RESERVATIONS SECTION =================== -->
+            <section id="reservations" class="content-section">
+                <div class="section-header">
+                    <h1>Table Reservations</h1>
+                    <button class="add-btn" onclick="loadReservations()" style="background:#2ecc71;">
+                        <i class="fas fa-sync"></i> Refresh
+                    </button>
+                </div>
+
+                <div class="glass-panel">
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Customer</th>
+                                    <th>Contact</th>
+                                    <th>Date & Time</th>
+                                    <th>Guests</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="reservationsBody">
+                                <tr><td colspan="7" style="text-align:center;color:#888;padding:20px;">Loading reservations...</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =================== HOMEPAGE CONTENT SECTION =================== -->
+            <section id="homepage" class="content-section">
+                <div class="section-header">
+                    <h1>Homepage Content</h1>
+                </div>
+
+                <!-- Tab switcher -->
+                <div class="menu-filters" style="margin-bottom:20px;">
+                    <button class="filter-btn active" id="tabDishes" onclick="switchHpTab('dishes')">🍽️ Signature Dishes</button>
+                    <button class="filter-btn" id="tabCollections" onclick="switchHpTab('collections')">📦 Featured Collections</button>
+                </div>
+
+                <!-- ---- SIGNATURE DISHES ---- -->
+                <div id="hpDishesPanel">
+                    <div class="section-header" style="margin-bottom:12px;">
+                        <h2 style="font-size:18px;">Our Signature Dishes</h2>
+                        <button class="add-btn" onclick="openHpModal('dish', null)">
+                            <i class="fas fa-plus"></i> Add Dish
+                        </button>
+                    </div>
+                    <div class="glass-panel">
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Image</th><th>Name</th><th>Description</th>
+                                        <th>Price</th><th>Order</th><th>Active</th><th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="hpDishesBody">
+                                    <tr><td colspan="7" style="text-align:center;color:#888;padding:20px;">Loading...</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ---- FEATURED COLLECTIONS ---- -->
+                <div id="hpCollectionsPanel" style="display:none;">
+                    <div class="section-header" style="margin-bottom:12px;">
+                        <h2 style="font-size:18px;">Featured Collections</h2>
+                        <button class="add-btn" onclick="openHpModal('collection', null)">
+                            <i class="fas fa-plus"></i> Add Collection
+                        </button>
+                    </div>
+                    <div class="glass-panel">
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Image</th><th>Name</th><th>Description</th>
+                                        <th>Price</th><th>Order</th><th>Active</th><th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="hpCollectionsBody">
+                                    <tr><td colspan="7" style="text-align:center;color:#888;padding:20px;">Loading...</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- =================== MENU ITEM MODAL (ADD/EDIT) =================== -->
+    <div id="addItemModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:9999;align-items:center;justify-content:center;">
+        <div style="background:#fff;border-radius:12px;padding:24px;width:400px;max-width:95vw;box-shadow:0 15px 50px rgba(0,0,0,0.25);max-height:95vh;overflow-y:auto;">
+            <h2 id="menuModalTitle" style="font-family:'Playfair Display',serif;margin-bottom:16px;font-size:1.4rem;">Add New Menu Item</h2>
+            <form id="addItemForm">
+                <input type="hidden" name="id" id="menuItemId">
+                <div style="display:grid;gap:14px;">
+                    <input name="name" placeholder="Item Name *" required style="padding:12px;border:1px solid #ddd;border-radius:8px;font-size:14px;">
+                    <textarea name="description" placeholder="Description" rows="2" style="padding:12px;border:1px solid #ddd;border-radius:8px;font-size:14px;resize:vertical;"></textarea>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                        <input name="price" type="number" placeholder="Regular Price (Rs.) *" required min="0" step="0.01" style="padding:12px;border:1px solid #ddd;border-radius:8px;font-size:14px;">
+                        <input name="price_large" type="number" placeholder="Large Price (Rs.)" min="0" step="0.01" style="padding:12px;border:1px solid #ddd;border-radius:8px;font-size:14px;">
+                    </div>
+                    
+                    <!-- Protein Prices Section -->
+                    <div style="margin-top:10px; padding:10px; background:#f9f9f9; border-radius:8px; border:1px solid #eee;">
+                        <p style="font-size:12px; font-weight:600; color:#666; margin-bottom:8px;">Protein Specific Prices (Optional - e.g. for Rice/Noodles)</p>
+                        <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:8px;">
+                            <span style="font-size:11px; color:#888;">Protein</span>
+                            <span style="font-size:11px; color:#888;">Regular (Rs.)</span>
+                            <span style="font-size:11px; color:#888;">Large (Rs.)</span>
+                            
+                            <label style="font-size:13px;">Chicken</label>
+                            <input name="p_chicken_s" type="number" placeholder="R" style="padding:6px;border:1px solid #ddd;border-radius:4px;font-size:12px;">
+                            <input name="p_chicken_l" type="number" placeholder="L" style="padding:6px;border:1px solid #ddd;border-radius:4px;font-size:12px;">
+                            
+                            <label style="font-size:13px;">Fish</label>
+                            <input name="p_fish_s" type="number" placeholder="R" style="padding:6px;border:1px solid #ddd;border-radius:4px;font-size:12px;">
+                            <input name="p_fish_l" type="number" placeholder="L" style="padding:6px;border:1px solid #ddd;border-radius:4px;font-size:12px;">
+                            
+                            <label style="font-size:13px;">Veg</label>
+                            <input name="p_veg_s" type="number" placeholder="R" style="padding:6px;border:1px solid #ddd;border-radius:4px;font-size:12px;">
+                            <input name="p_veg_l" type="number" placeholder="L" style="padding:6px;border:1px solid #ddd;border-radius:4px;font-size:12px;">
+                            
+                            <label style="font-size:13px;">Egg</label>
+                            <input name="p_egg_s" type="number" placeholder="R" style="padding:6px;border:1px solid #ddd;border-radius:4px;font-size:12px;">
+                            <input name="p_egg_l" type="number" placeholder="L" style="padding:6px;border:1px solid #ddd;border-radius:4px;font-size:12px;">
+                        </div>
+                    </div>
+
+                    <select name="category" required style="padding:12px;border:1px solid #ddd;border-radius:8px;font-size:14px;">
+                        <option value="">Select Category *</option>
+                        <option value="main course">Main Course</option>
+                        <option value="side dishes">Side Dishes</option>
+                        <option value="desserts & sweets">Desserts & Sweets</option>
+                        <option value="beverages">Beverages</option>
+                        <option value="breakfast items">Breakfast Items</option>
+                    </select>
+                    <div style="margin-top:5px;">
+                        <input name="image_url" id="menuImageUrl" placeholder="Image Path (e.g. images/dish.jpg)" style="padding:12px;border:1px solid #ddd;border-radius:8px;font-size:14px;width:100%;">
+                        <p style="font-size:11px;color:#666;margin:5px 0 0 5px;">💡 Tip: Place your image in the <b>frontend/images/</b> folder and type <b>images/filename.jpg</b> here.</p>
+                        <div id="imagePreviewContainer" style="margin-top:10px; display:none; align-items:center; gap:10px; background:#f0f0f0; padding:10px; border-radius:8px;">
+                            <img id="menuImagePreview" src="" style="width:60px; height:60px; object-fit:cover; border-radius:4px; border:1px solid #ccc;">
+                            <span style="font-size:12px; color:#555;">Image Preview</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="display:flex;gap:12px;margin-top:20px;justify-content:flex-end;">
+                    <button type="button" onclick="closeModal('addItemModal')" style="padding:10px 20px;border:1px solid #ddd;border-radius:8px;background:#fff;cursor:pointer;">Cancel</button>
+                    <button type="submit" style="padding:10px 24px;background:#c9a84c;color:#fff;border:none;border-radius:8px;cursor:pointer;font-weight:600;">Add Item</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+
+    <!-- =================== HOMEPAGE ITEM MODAL =================== -->
+    <div id="hpItemModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.65);z-index:9999;align-items:center;justify-content:center;">
+        <div style="background:#fff;border-radius:12px;padding:24px;width:420px;max-width:95vw;box-shadow:0 15px 50px rgba(0,0,0,0.25);max-height:90vh;overflow-y:auto;">
+            <h2 id="hpModalTitle" style="font-family:'Playfair Display',serif;margin-bottom:16px;font-size:1.4rem;">Add Item</h2>
+            <form id="hpItemForm">
+                <input type="hidden" id="hpItemId">
+                <input type="hidden" id="hpItemType">
+                <div style="display:grid;gap:14px;">
+                    <div>
+                        <label style="font-size:13px;color:#666;display:block;margin-bottom:4px;">Name *</label>
+                        <input id="hpName" placeholder="e.g. Pepper Chicken" required
+                            style="width:100%;padding:11px;border:1px solid #ddd;border-radius:8px;font-size:14px;box-sizing:border-box;">
+                    </div>
+                    <div>
+                        <label style="font-size:13px;color:#666;display:block;margin-bottom:4px;">Description</label>
+                        <textarea id="hpDescription" rows="2" placeholder="Short description shown on homepage..."
+                            style="width:100%;padding:11px;border:1px solid #ddd;border-radius:8px;font-size:14px;resize:vertical;box-sizing:border-box;"></textarea>
+                    </div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+                        <div>
+                            <label style="font-size:13px;color:#666;display:block;margin-bottom:4px;">Price * (e.g. Rs.1350)</label>
+                            <input id="hpPrice" placeholder="Rs.1350" required
+                                style="width:100%;padding:11px;border:1px solid #ddd;border-radius:8px;font-size:14px;box-sizing:border-box;">
+                        </div>
+                        <div>
+                            <label style="font-size:13px;color:#666;display:block;margin-bottom:4px;">Large Price (e.g. Rs.1500)</label>
+                            <input id="hpPriceLarge" placeholder="Rs.1500"
+                                style="width:100%;padding:11px;border:1px solid #ddd;border-radius:8px;font-size:14px;box-sizing:border-box;">
+                        </div>
+                        <div>
+                            <label style="font-size:13px;color:#666;display:block;margin-bottom:4px;">Sort Order</label>
+                            <input id="hpSortOrder" type="number" value="0" min="0"
+                                style="width:100%;padding:11px;border:1px solid #ddd;border-radius:8px;font-size:14px;box-sizing:border-box;">
+                        </div>
+                    </div>
+                    <div>
+                        <label style="font-size:13px;color:#666;display:block;margin-bottom:4px;">Image Path (e.g. images/dish.jpg)</label>
+                        <input id="hpImageUrl" placeholder="images/pepper chicken_resized.jpg"
+                            style="width:100%;padding:11px;border:1px solid #ddd;border-radius:8px;font-size:14px;box-sizing:border-box;">
+                    </div>
+                    <div>
+                        <label style="font-size:13px;color:#666;display:block;margin-bottom:4px;">Link URL</label>
+                        <input id="hpLinkUrl" value="fooddetail.html"
+                            style="width:100%;padding:11px;border:1px solid #ddd;border-radius:8px;font-size:14px;box-sizing:border-box;">
+                    </div>
+                    <div style="display:flex;align-items:center;gap:10px;">
+                        <input id="hpActive" type="checkbox" checked style="width:18px;height:18px;cursor:pointer;">
+                        <label for="hpActive" style="font-size:14px;color:#333;cursor:pointer;">Show on Homepage (Active)</label>
+                    </div>
+                </div>
+                <div style="display:flex;gap:12px;margin-top:24px;justify-content:flex-end;">
+                    <button type="button" onclick="closeModal('hpItemModal')"
+                        style="padding:10px 20px;border:1px solid #ddd;border-radius:8px;background:#fff;cursor:pointer;">Cancel</button>
+                    <button type="submit" id="hpSubmitBtn"
+                        style="padding:10px 28px;background:#c9a84c;color:#fff;border:none;border-radius:8px;cursor:pointer;font-weight:600;">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ms Signature Dining | The Legacy of Taste Refined</title>
+    <link rel="stylesheet" href="Styles/Home.css">
+    <!-- Google Fonts for the elegant look -->
+    <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header & Hero Section -->
+    <header class="hero">
+        <img src="images/log.jpeg" class="hero-bg-img" alt="Hero Background">
+        <div class="hero-overlay"></div>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="reservation.html">Book a Table</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+            </ul>
+            <div class="user-icon">
+                <a href="login.html" class="login-link">
+                    <i class="fas fa-user-circle"></i>
+                    <span>Login</span>
+                </a>
+            </div>
+        </nav>
+
+        <div class="hero-content">
+            <p class="welcome-text">Welcome user</p>
+            <h1 class="hero-title">The Legacy of <span>Taste Refined</span></h1>
+            <p class="hero-subtitle">Savor the authentic flavors of our heritage served with a modern touch of luxury.
+            </p>
+            <button class="btn-primary" onclick="window.location.href='menu.html'">Explore the Menu</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Signature Dishes Section — loaded dynamically from API -->
+        <section class="featured-collections container">
+            <h2 class="section-heading">Our Signature Dishes</h2>
+            <div class="grid-container" id="signatureDishesGrid">
+                <!-- Cards rendered by home.js -->
+            </div>
+        </section>
+
+        <!-- Featured Collections — loaded dynamically from API -->
+        <section class="featured-collections container">
+            <h2 class="section-heading">Featured Collections</h2>
+            <div class="grid-container" id="featuredCollectionsGrid">
+                <!-- Cards rendered by home.js -->
+            </div>
+        </section>
+
+        <!-- Related Places Section -->
+        <section class="related-places container">
+            <h2 class="section-heading">Our Related Places</h2>
+            <div class="grid-container" id="placesGrid">
+                <!-- Data will be loaded here via JS -->
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials container">
+            <h2 class="section-heading">Voices of the Island</h2>
+            <div class="testimonial-slider">
+                <button class="slider-arrow prev"><i class="fas fa-chevron-left"></i></button>
+                <div class="testimonial-grid">
+                    <div class="testimonial-box">
+                        <p class="quote">"An explosion of authentic island flavors. The Black Pork Curry was a
+                            masterpiece of spice and soul. Truly the finest Sri Lankan dining experience in the city."
+                        </p>
+                        <p class="author">Adithya R., Culinary Critic</p>
+                        <div class="stars">★★★★★</div>
+                        <p class="ratings-label">Ratings</p>
+                    </div>
+                    <div class="testimonial-box">
+                        <p class="quote">"From the moment we walked in, the elegance was palpable. A perfect blend of
+                            modern luxury and traditional warmth. The Saffron Hoppers are a must-try!"</p>
+                        <p class="author">Sarah Jenkins, Lifestyle Blogger</p>
+                        <div class="stars">★★★★☆</div>
+                        <p class="ratings-label">Ratings</p>
+                    </div>
+                </div>
+                <button class="slider-arrow next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>Operational Hours</h4>
+                <p>Mon-Fri 10.00 AM - 12.00 PM</p>
+                <p>Sat - Sun 9.00 AM - Midnight</p>
+                <div class="social-media">
+                    <h4>Social Media</h4>
+                    <div class="social-icons">
+                        <a href="#"><img src="images/Instagram.png" alt="Instagram"></a>
+                        <a href="#"><img src="images/Facebook logo.png" alt="Facebook"></a>
+                        <a href="#"><img src="images/X.png" alt="Twitter"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Support & Care</h4>
+                <ul>
+                    <li><a href="#">Privacy & Policy</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Subscribe to our email</h4>
+                <p>Enter your Email Address</p>
+                <form class="subscribe-form">
+                    <input type="email" placeholder="email@example.com">
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 Ms signature dining all right reserved.
+        </div>
+    </footer>
+
+    <script src="script/home.js"></script>
+</body>
+
+</html>
